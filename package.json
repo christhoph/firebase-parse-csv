@@ -1,0 +1,19 @@
+{
+  "name": "firenode",
+  "version": "1.0.0",
+  "description": "Simple app to parse csv files and create collections in Firebase",
+  "main": "index.js",
+  "scripts": {
+    "start": "node -r dotenv/config index.js"
+  },
+  "keywords": [],
+  "author": "CS",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "fast-csv": "^4.3.6",
+    "firebase": "^9.2.0",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7"
+  }
+}
