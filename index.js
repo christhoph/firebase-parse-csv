@@ -1,4 +1,4 @@
-const csv = require("@fast-csv/parse");
+const csv = require("fast-csv");
 
 const { getStream, parseConfig, validate, transform } = require("./utils");
 const { addUser } = require("./firebase");

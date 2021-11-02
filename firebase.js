@@ -1,5 +1,11 @@
 const { initializeApp } = require("firebase/app");
-const { getFirestore, collection, addDoc } = require("firebase/firestore/lite");
+const {
+  getFirestore,
+  collection,
+  addDoc,
+  getDoc,
+  doc,
+} = require("firebase/firestore/lite");
 
 require("dotenv").config();
 
@@ -16,11 +22,15 @@ const app = initializeApp(config);
 const db = getFirestore(app);
 
 const testCollection = collection(db, "test");
+const subCollection = collection(
+  doc(db, "cycles", "SMOh2eLp8Cv7vylKlvQj"),
+  "candidates"
+);
 
-const addUser = (data, state = "active") => {
+const addUser = (data, group = "independent") => {
   const user = {
     ...data,
-    state,
+    group,
   };
 
   addDoc(testCollection, user);
